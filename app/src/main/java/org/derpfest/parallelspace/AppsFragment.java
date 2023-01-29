@@ -1,4 +1,4 @@
-package com.libremobileos.parallelspace;
+package org.derpfest.parallelspace;
 
 import android.os.Bundle;
 import android.view.View;

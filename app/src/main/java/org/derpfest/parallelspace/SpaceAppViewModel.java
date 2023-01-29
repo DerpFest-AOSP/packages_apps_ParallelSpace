@@ -1,4 +1,4 @@
-package com.libremobileos.parallelspace;
+package org.derpfest.parallelspace;
 
 import android.app.Application;
 import android.content.Context;
@@ -10,7 +10,7 @@ import android.content.pm.ResolveInfo;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.android.internal.libremobileos.app.ParallelSpaceManager;
+import com.android.internal.derp.app.ParallelSpaceManager;
 
 import java.util.ArrayList;
 import java.util.List;

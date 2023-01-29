@@ -15,7 +15,7 @@
      limitations under the License.
 -->
 <permissions>
-    <privapp-permissions package="com.libremobileos.parallelspace">
+    <privapp-permissions package="org.derpfest.parallelspace">
         <permission name="android.permission.MANAGE_PARALLEL_SPACES"/>
     </privapp-permissions>
 </permissions>
