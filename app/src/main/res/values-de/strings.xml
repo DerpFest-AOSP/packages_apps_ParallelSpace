@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2023 DerpFest
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_summary">Ermöglicht die parallele Ausführung mehrerer Instanzen derselben Anwendung.</string>
+    <string name="intro">Ausführen mehrerer Instanzen derselben Anwendung in getrennten parallelen Bereichen</string>
+
+    <string name="category_spaces">Bereiche</string>
+    <string name="no_space">Keine Bereiche verfügbar</string>
+    <string name="space">Bereich</string>
+    <string name="please_wait">Bitte Warten</string>
+    <string name="invalid_user_id">Ungültiger Benutzer</string>
+    <string name="add_space">Bereich hinzufügen</string>
+    <string name="remove_space">Bereich entfernen</string>
+    <string name="cancel">Abbrechen</string>
+
+    <string name="new_space_dialog_title">Neuen Bereich erstellen</string>
+    <string name="new_space_dialog_message">Gib einen Namen für den neuen Bereich ein</string>
+    <string name="new_space_dialog_positive">Erstellen</string>
+    <string name="new_space_progress_message">Bereich wird erstellt...</string>
+
+    <string name="remove_space_dialog_title">Bereich entfernen</string>
+    <string name="remove_space_dialog_message">Soll der Bereich wirklich entfernt werden?</string>
+    <string name="remove_space_dialog_positive">Entfernen</string>
+    <string name="remove_space_progress_message">Bereich wird entfernt...</string>
+
+    <string name="space_name_empty">Bereichsname darf nicht leer sein</string>
+    <string name="space_limit_reached">Sie haben die maximale Anzahl an Bereiche erreicht</string>
+
+</resources>
