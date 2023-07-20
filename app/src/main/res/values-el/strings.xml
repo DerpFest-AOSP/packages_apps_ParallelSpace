@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Παραλλήλος χώρος εφαρμογών</string>
+    <string name="app_summary">Δυνατότητα παράλληλης εκτέλεσης πολλών εκδόσεων, της ίδιας εφαρμογής.</string>
+    <string name="intro">Εκτέλεση πολλαπλών εκδόσεων της ίδιας εφαρμογής, σε διαχωρισμένους παράλληλους χώρους</string>
+
+    <string name="category_spaces">Χώροι εφαρμογών</string>
+    <string name="no_space">Δεν υπάρχει διαθέσιμος χώρος για νέες εφαρμογές</string>
+    <string name="space">Χώρος</string>
+    <string name="please_wait">Παρακαλώ περιμένετε</string>
+    <string name="invalid_user_id">Μη έγκυρος χρήστης</string>
+    <string name="add_space">Προσθήκη χώρου</string>
+    <string name="remove_space">Διαγραφή χώρου</string>
+    <string name="cancel">Άκυρο</string>
+
+    <string name="new_space_dialog_title">Δημιουργία νέου χώρου</string>
+    <string name="new_space_dialog_message">Εισάγετε ένα όνομα για το νέο χώρο εφαρμογών</string>
+    <string name="new_space_dialog_positive">Δημιουργία</string>
+    <string name="new_space_progress_message">Δημιουργία χώρου...</string>
+
+    <string name="remove_space_dialog_title">Διαγραφή χώρου</string>
+    <string name="remove_space_dialog_message">Είστε βέβαιοι ότι θέλετε να καταργήσετε αυτόν τον χώρο?</string>
+    <string name="remove_space_dialog_positive">Διαγραφή</string>
+    <string name="remove_space_progress_message">Γίνεται διαγραφή...</string>
+
+    <string name="space_name_empty">Το όνομα χώρου δεν μπορεί να είναι κενό</string>
+    <string name="space_limit_reached">Έχετε φτάσει το μέγιστο αριθμό δημιουργίας χώρων!</string>
+
+</resources>
