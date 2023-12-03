@@ -25,4 +25,5 @@
     <string name="space_name_empty">Space name cannot be empty</string>
     <string name="space_limit_reached">You have reached the maximum number of spaces</string>
 
+    <string name="default_cloned_summary">This app is always cloned</string>
 </resources>

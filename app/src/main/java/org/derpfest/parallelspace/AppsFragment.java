@@ -1,5 +1,9 @@
 package org.derpfest.parallelspace;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.view.View;
 
@@ -7,6 +11,8 @@ import androidx.preference.PreferenceFragmentCompat;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreference;
+
+import com.android.internal.derp.app.ParallelSpaceManager;
 
 import java.util.List;
 
@@ -41,7 +47,14 @@ public class AppsFragment extends PreferenceFragmentCompat {
 
     private void updateAppsList(List<SpaceAppInfo> apps) {
         int order = 0;
+        List<String> defaultClonedApps = ParallelSpaceManager.getInstance().getDefaultClonedApps();
         for (SpaceAppInfo info : apps) {
+            if (defaultClonedApps.contains(info.getPackageName())) {
+                /* Potential case where user installs an app in the list
+                   as a user app somehow, grr.
+                */
+                continue;
+            }
             SwitchPreference pref = new SwitchPreference(requireActivity());
             pref.setTitle(info.getLabel());
             pref.setSummary(info.getPackageName());
@@ -55,5 +68,28 @@ public class AppsFragment extends PreferenceFragmentCompat {
             pref.setOrder(order);
             order++;
         }
+        for (String appPackageName : defaultClonedApps) {
+            ResolveInfo info = getResolveInfoFor(getContext(), appPackageName);
+            if (info == null) {
+                // Could not resolve the activity, maybe its not user facing.
+                continue;
+            }
+            SwitchPreference pref = new SwitchPreference(requireActivity());
+            pref.setTitle(info.loadLabel(getContext().getPackageManager()).toString());
+            pref.setSummary(R.string.default_cloned_summary);
+            pref.setIcon(info.loadIcon(getContext().getPackageManager()));
+            pref.setChecked(true);
+            pref.setEnabled(false);
+            mPreferenceScreen.addPreference(pref);
+            pref.setOrder(order);
+            order++;
+        }
+    }
+
+    private ResolveInfo getResolveInfoFor(Context context, String packageName) {
+        Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
+        mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+        mainIntent.setPackage(packageName);
+        return getContext().getPackageManager().resolveActivity(mainIntent, 0);
     }
 }
