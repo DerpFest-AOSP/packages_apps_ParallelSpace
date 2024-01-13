@@ -10,3 +10,4 @@
 local.properties
 *.jks
 keystore.properties
+platform.keystore
