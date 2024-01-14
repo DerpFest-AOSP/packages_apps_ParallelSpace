@@ -7,13 +7,13 @@ def keystoreProperties = new Properties()
 keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
-        minSdk 32
-        targetSdk 32
-        versionCode 12
-        versionName "12"
+        minSdk 33
+        targetSdk 33
+        versionCode 33
+        versionName "13"
     }
 
     compileOptions {

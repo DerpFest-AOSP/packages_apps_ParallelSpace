@@ -1,6 +1,9 @@
 package org.derpfest.parallelspace;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.UserInfo;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -15,13 +18,25 @@ import androidx.preference.PreferenceFragmentCompat;
 import com.android.internal.derp.app.ParallelSpaceManager;
 
 import java.util.List;
+import java.util.Objects;
 
 public class SettingsFragment extends PreferenceFragmentCompat {
     private ParallelSpaceManager mParallelSpaceManager;
     private UserManager mUserManager;
     private PreferenceCategory mPreferenceCategory;
+    private UpdateSpaceListReceiver receiver;
 
     public static final String KEY_MAIN_SPACES = "main_spaces";
+
+    class UpdateSpaceListReceiver extends BroadcastReceiver {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            if (Objects.equals(action, Intent.ACTION_PARALLEL_SPACE_CHANGED)) {
+                updateSpaceList();
+            }
+        }
+    }
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -35,8 +50,15 @@ public class SettingsFragment extends PreferenceFragmentCompat {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        registerUpdateReceiver();
         updateSpaceList();
+    }
+
+    private void registerUpdateReceiver() {
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(Intent.ACTION_PARALLEL_SPACE_CHANGED);
+        receiver = new UpdateSpaceListReceiver();
+        requireActivity().registerReceiver(receiver, filter, Context.RECEIVER_EXPORTED);
     }
 
     public void updateSpaceList() {
@@ -62,6 +84,14 @@ public class SettingsFragment extends PreferenceFragmentCompat {
             mPreferenceCategory.addPreference(pref);
             pref.setOrder(order);
             order++;
+        }
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        if (receiver != null) {
+            requireActivity().unregisterReceiver(receiver);
         }
     }
 }
