@@ -13,7 +13,7 @@
     <string name="cancel">Cancel</string>
 
     <string name="new_space_dialog_title">Create new space</string>
-    <string name="new_space_dialog_message">Enter a name for the new space</string>
+    <string name="new_space_dialog_message">Enter a name for the new space, or use the default name to create the space if no name is entered.</string>
     <string name="new_space_dialog_positive">Create</string>
     <string name="new_space_progress_message">Creating space...</string>
 
@@ -22,7 +22,6 @@
     <string name="remove_space_dialog_positive">Remove</string>
     <string name="remove_space_progress_message">Removing space...</string>
 
-    <string name="space_name_empty">Space name cannot be empty</string>
     <string name="space_limit_reached">You have reached the maximum number of spaces</string>
 
     <string name="default_cloned_summary">This app is always cloned</string>

@@ -84,10 +84,12 @@ public class AppsActivity extends CollapsingToolbarBaseActivity {
         progressDialog.show();
 
         Thread thread = new Thread(() -> {
-            mParallelSpaceManager.remove(mUserId);
-            runOnUiThread(() -> {
-                AppsActivity.this.finish();
-            });
+            try {
+                mParallelSpaceManager.remove(mUserId);
+                runOnUiThread(AppsActivity.this::finish);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         });
         thread.start();
     }

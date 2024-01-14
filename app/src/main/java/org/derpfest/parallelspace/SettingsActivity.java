@@ -17,6 +17,7 @@ import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 
 public class SettingsActivity extends CollapsingToolbarBaseActivity {
     private ParallelSpaceManager mParallelSpaceManager;
+    private String defaultSpaceName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +44,8 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity {
             case R.id.add_space:
                 View newSpaceView = getLayoutInflater().inflate(R.layout.new_space_dialog, null);
                 EditText newSpaceName = newSpaceView.findViewById(R.id.new_space_name);
-                newSpaceName.setHint(getString(R.string.space) + " " + (mParallelSpaceManager.getParallelUsers().size() + 1));
+                defaultSpaceName = getString(R.string.space) + " " + (mParallelSpaceManager.getParallelUsers().size() + 1);
+                newSpaceName.setHint(defaultSpaceName);
                 newSpaceName.setInputType(InputType.TYPE_CLASS_TEXT);
 
                 AlertDialog builder = new AlertDialog.Builder(this)
@@ -53,11 +55,11 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity {
                         .setPositiveButton(R.string.new_space_dialog_positive, (dialog, which) -> {
                             String spaceName = newSpaceName.getText().toString();
                             if (spaceName.isEmpty()) {
-                                Toast.makeText(SettingsActivity.this, R.string.space_name_empty, Toast.LENGTH_SHORT).show();
+                                createSpace(defaultSpaceName);
                             } else {
                                 createSpace(spaceName);
-                                dialog.dismiss();
                             }
+                            dialog.dismiss();
                         })
                         .setNegativeButton(R.string.cancel, (dialog, which) -> dialog.cancel()).create();
 

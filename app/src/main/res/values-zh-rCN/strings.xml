@@ -6,23 +6,22 @@
     <string name="category_spaces">空间</string>
     <string name="no_space">无可用空间</string>
     <string name="space">空间</string>
-    <string name="please_wait">请稍后</string>
+    <string name="please_wait">请稍候</string>
     <string name="invalid_user_id">无效用户</string>
     <string name="add_space">添加空间</string>
     <string name="remove_space">移除空间</string>
     <string name="cancel">取消</string>
 
     <string name="new_space_dialog_title">创建一个新空间</string>
-    <string name="new_space_dialog_message">为新空间输入一个名字</string>
+    <string name="new_space_dialog_message">为新空间输入一个名字，若不输入则使用默认名称。</string>
     <string name="new_space_dialog_positive">创建</string>
-    <string name="new_space_progress_message">正在创建空间...</string>
+    <string name="new_space_progress_message">正在创建空间…</string>
 
     <string name="remove_space_dialog_title">移除空间</string>
     <string name="remove_space_dialog_message">您确定要移除该空间？所有有关该空间的应用和数据都将被删除！</string>
     <string name="remove_space_dialog_positive">移除</string>
-    <string name="remove_space_progress_message">正在移除空间...</string>
+    <string name="remove_space_progress_message">正在移除空间…</string>
 
-    <string name="space_name_empty">空间名称不可以为空！</string>
     <string name="space_limit_reached">您已达到最大可创建空间实例上限！</string>
 
     <string name="default_cloned_summary">该应用将始终被克隆</string>
