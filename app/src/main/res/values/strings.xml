@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Parallel Space</string>
     <string name="app_summary">Allow running multiple instances of the same application in parallel.</string>
     <string name="intro">Running multiple instances of the same application in separated parallel spaces</string>
@@ -25,4 +25,10 @@
     <string name="space_limit_reached">You have reached the maximum number of spaces</string>
 
     <string name="default_cloned_summary">This app is always cloned</string>
+    <string name="space_settings">Space settings</string>
+    <string name="space_settings_placeholder"><xliff:g id="space_name">%s</xliff:g> Space settings</string>
+    <string name="space_settings_category_perm">Permissions</string>
+    <string name="space_settings_perm_allow_install">Allow install unknown source apps</string>
+    <string name="space_settings_perm_set_wallpaper">Allow setup device wallpaper</string>
+
 </resources>

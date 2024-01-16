@@ -1,3 +1,33 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <style name="Theme.ParallelSpace" parent="Theme.SubSettingsBase" />
+
+    <style name="BottomSheet" parent="@style/Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/sheet_background</item>
+    </style>
+
+    <style name="BaseBottomSheetDialog" parent="@style/Theme.MaterialComponents.DayNight.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="bottomSheetStyle">@style/BottomSheet</item>
+    </style>
+
+    <style name="BottomSheetDialogTheme" parent="BaseBottomSheetDialog">
+        <item name="android:switchStyle">@style/Switch.SettingsLib</item>
+        <item name="android:textAppearanceListItem">
+            @style/TextAppearance.PreferenceTitle.SettingsLib
+        </item>
+        <item name="android:listPreferredItemPaddingStart">24dp</item>
+        <item name="android:listPreferredItemPaddingLeft">24dp</item>
+        <item name="android:listPreferredItemPaddingEnd">16dp</item>
+        <item name="android:listPreferredItemPaddingRight">16dp</item>
+        <item name="preferenceTheme">@style/PreferenceTheme.SettingsLib</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="colorControlNormal">?android:attr/colorControlNormal</item>
+        <item name="alertDialogTheme">@style/Theme.AlertDialog.SettingsLib</item>
+        <item name="android:windowBlurBehindEnabled">true</item>
+        <item name="android:windowBlurBehindRadius">12dp</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="colorAccent">@color/material_dynamic_neutral70</item>
+    </style>
 </resources>

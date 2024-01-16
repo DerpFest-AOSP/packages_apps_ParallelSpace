@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">平行空间</string>
     <string name="app_summary">在平行空间内运行同一应用程序的多个实例</string>
     <string name="intro">您可以在多个分离的平行空间中运行同一应用程序的多个实例。</string>
@@ -25,4 +25,10 @@
     <string name="space_limit_reached">您已达到最大可创建空间实例上限！</string>
 
     <string name="default_cloned_summary">该应用将始终被克隆</string>
+    <string name="space_settings">空间设置</string>
+    <string name="space_settings_placeholder"><xliff:g id="space_name">%s</xliff:g> 空间设置</string>
+    <string name="space_settings_category_perm">权限</string>
+    <string name="space_settings_perm_allow_install">允许安装未知来源应用</string>
+    <string name="space_settings_perm_set_wallpaper">允许设置设备壁纸</string>
+
 </resources>

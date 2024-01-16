@@ -19,6 +19,7 @@ public class AppsActivity extends CollapsingToolbarBaseActivity {
 
     private ParallelSpaceManager mParallelSpaceManager;
     private int mUserId;
+    private String userName;
     private AlertDialog progressDialog;
 
     @Override
@@ -27,7 +28,7 @@ public class AppsActivity extends CollapsingToolbarBaseActivity {
         mParallelSpaceManager = ParallelSpaceManager.getInstance();
 
         mUserId = getIntent().getIntExtra(EXTRA_USER_ID, -1);
-        String userName = getIntent().getStringExtra(EXTRA_USER_NAME);
+        userName = getIntent().getStringExtra(EXTRA_USER_NAME);
         if (mUserId == -1) {
             Toast.makeText(this, R.string.invalid_user_id, Toast.LENGTH_SHORT).show();
             finish();
@@ -67,6 +68,9 @@ public class AppsActivity extends CollapsingToolbarBaseActivity {
                         .setPositiveButton(R.string.remove_space_dialog_positive, (dialog, which) -> removeSpace())
                         .setNegativeButton(R.string.cancel, (dialog, which) -> dialog.cancel()).create();
                 builder.show();
+                break;
+            case R.id.space_settings:
+                new SpaceSettingsSheetDialog(userName, mUserId).show(getSupportFragmentManager(), "settingsPerfDialog");
                 break;
         }
         return super.onOptionsItemSelected(item);
