@@ -17,5 +17,6 @@
 <permissions>
     <privapp-permissions package="org.derpfest.parallelspace">
         <permission name="android.permission.MANAGE_PARALLEL_SPACES"/>
+        <permission name="android.permission.MANAGE_USERS"/>
     </privapp-permissions>
 </permissions>
