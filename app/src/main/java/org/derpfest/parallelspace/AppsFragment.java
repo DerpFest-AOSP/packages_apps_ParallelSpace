@@ -10,7 +10,7 @@ import android.view.View;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.preference.PreferenceScreen;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 
 import com.android.internal.derp.app.ParallelSpaceManager;
 
@@ -55,7 +55,7 @@ public class AppsFragment extends PreferenceFragmentCompat {
                 */
                 continue;
             }
-            SwitchPreference pref = new SwitchPreference(requireActivity());
+            SwitchPreferenceCompat pref = new SwitchPreferenceCompat(requireActivity());
             pref.setTitle(info.getLabel());
             pref.setSummary(info.getPackageName());
             pref.setIcon(info.getIcon());
@@ -74,7 +74,7 @@ public class AppsFragment extends PreferenceFragmentCompat {
                 // Could not resolve the activity, maybe its not user facing.
                 continue;
             }
-            SwitchPreference pref = new SwitchPreference(requireActivity());
+            SwitchPreferenceCompat pref = new SwitchPreferenceCompat(requireActivity());
             pref.setTitle(info.loadLabel(getContext().getPackageManager()).toString());
             pref.setSummary(R.string.default_cloned_summary);
             pref.setIcon(info.loadIcon(getContext().getPackageManager()));
