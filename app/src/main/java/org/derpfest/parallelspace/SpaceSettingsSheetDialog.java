@@ -14,7 +14,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -22,6 +21,7 @@ import androidx.annotation.Nullable;
 
 import com.android.internal.derp.app.ParallelSpaceManager;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import com.google.android.material.materialswitch.MaterialSwitch;
 
 import java.util.List;
 
@@ -30,8 +30,8 @@ public class SpaceSettingsSheetDialog extends BottomSheetDialogFragment {
     private static final String TAG = SpaceSettingsSheetDialog.class.getSimpleName();
 
     private TextView spaceTitle;
-    private Switch permAllowUnknownApk;
-    private Switch permAllowSetupWallpaper;
+    private MaterialSwitch permAllowUnknownApk;
+    private MaterialSwitch permAllowSetupWallpaper;
 
     private String spaceName;
     private int userId;
